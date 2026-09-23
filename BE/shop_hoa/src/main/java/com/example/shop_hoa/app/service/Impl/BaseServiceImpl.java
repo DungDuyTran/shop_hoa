@@ -1,6 +1,6 @@
-package com.example.shop_hoa.service.Impl;
+package com.example.shop_hoa.app.service.Impl;
 
-import com.example.shop_hoa.service.BaseService;
+import com.example.shop_hoa.app.service.BaseService;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 

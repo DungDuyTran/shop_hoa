@@ -1,6 +1,6 @@
-package com.example.shop_hoa.controller;
+package com.example.shop_hoa.app.controller;
 
-import com.example.shop_hoa.service.BaseService;
+import com.example.shop_hoa.app.service.BaseService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

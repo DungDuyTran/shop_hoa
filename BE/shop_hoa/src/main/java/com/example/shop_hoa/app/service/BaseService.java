@@ -1,4 +1,4 @@
-package com.example.shop_hoa.service;
+package com.example.shop_hoa.app.service;
 
 import java.util.List;
 
