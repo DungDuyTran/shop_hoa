@@ -1,5 +1,5 @@
 package com.example.shop_hoa.core.factory;
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import com.example.shop_hoa.core.annotation.GenCrud;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ public class CrudFactory {
     private ApplicationContext context;
 
     @Autowired
+    @Qualifier("requestMappingHandlerMapping")
     private RequestMappingHandlerMapping handlerMapping;
 
     @PostConstruct

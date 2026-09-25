@@ -1,31 +1,48 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4">
-      <div className="bg-white p-10 rounded-2xl shadow-xl flex flex-col items-center max-w-lg w-full">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-4 text-center">
+    <div
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('https://pendecor.vn/uploads/files/2022/01/25/thiet-ke-shop-hoa-tuoi-nho-1.jpg')",
+      }}
+    >
+      {/* Lớp phủ mờ */}
+      <div className="absolute inset-0 z-0 bg-black/40"></div>
+
+      {/* Cụm nút */}
+      <div className="absolute top-6 right-6 z-20 flex gap-4">
+        <button
+          onClick={() => router.push("/auth/login")}
+          className="px-6 py-2.5 bg-green-600/90 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-lg"
+        >
+          Đăng nhập
+        </button>
+
+        <button
+          onClick={() => router.push("/auth/register")}
+          className="px-6 py-2.5 bg-green-600/90 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-lg"
+        >
+          Đăng ký
+        </button>
+      </div>
+
+      {/* Nội dung */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-4">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-xl text-center">
           Shop Hoa
         </h1>
-        <p className="text-gray-600 mb-8 text-center">
+
+        <p className="text-lg md:text-xl font-medium drop-shadow-md text-center max-w-2xl">
           Chào mừng bạn đến với hệ thống. Vui lòng đăng nhập hoặc tạo tài khoản
           mới để trải nghiệm dịch vụ.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-          <Link
-            href="/auth/login"
-            className="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm"
-          >
-            Đăng nhập
-          </Link>
-          <Link
-            href="/auth/register"
-            className="flex-1 text-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-sm"
-          >
-            Đăng ký
-          </Link>
-        </div>
       </div>
     </div>
   );
